@@ -1,5 +1,4 @@
 
-Copy code
 [build]
   base = "my-app"           # Points to the my-app folder
   command = "npm run build"  # Build command for Next.js

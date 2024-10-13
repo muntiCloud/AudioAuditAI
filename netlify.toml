@@ -1,7 +1,9 @@
+
+Copy code
 [build]
-  command = "npm run build"
-  publish = ".next"
-  functions = "netlify/functions"
+  base = "my-app"           # Points to the my-app folder
+  command = "npm run build"  # Build command for Next.js
+  publish = "my-app/.next"   # Next.js output folder
 
 [[plugins]]
-  package = "@netlify/plugin-nextjs"
+  package = "@netlify/plugin-nextjs"  # Ensure the Next.js plugin is used

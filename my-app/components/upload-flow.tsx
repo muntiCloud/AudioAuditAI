@@ -1,24 +1,23 @@
-// components/upload-flow.tsx
-
-// upload-flow.tsx
 "use client";
 
 import { IoMdArrowBack } from "react-icons/io";
 
-export default function UploadFlow({ onBack }: { onBack: () => void }) {
+type UploadFlowProps = {
+  onComplete: () => void;
+  onBack: () => void;
+};
+
+export default function UploadFlow({ onComplete, onBack }: UploadFlowProps) {
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-purple-50 flex items-center justify-center">
       <div className="relative w-[400px] bg-white rounded-lg shadow-lg p-8">
 
-        {/* Back Arrow */}
         <button onClick={onBack} className="absolute top-4 left-4 text-gray-600">
           <IoMdArrowBack size={24} />
         </button>
 
-        {/* Title */}
         <h1 className="text-2xl font-bold text-center mb-6">Upload New Work</h1>
 
-        {/* File Upload Sections */}
         <div className="space-y-6">
           {/* Upload Sound Recording */}
           <div className="border-dashed border-2 border-gray-300 p-4 rounded-md text-center">
@@ -70,10 +69,8 @@ export default function UploadFlow({ onBack }: { onBack: () => void }) {
             </label>
           </div>
         </div>
-
-        {/* Continue Button */}
         <button
-          onClick={onBack}
+          onClick={onComplete}
           className="mt-6 w-full px-4 py-2 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-lg"
         >
           Continue
@@ -82,87 +79,3 @@ export default function UploadFlow({ onBack }: { onBack: () => void }) {
     </div>
   );
 }
-
-
-// "use client";
-// import { IoMdArrowBack, IoMdClose } from "react-icons/io";
-
-
-// export default function UploadFlow({ onComplete, onBack }: { onComplete: () => void; onBack: () => void }) {
-//   return (
-//     <div className="p-4">
-
-//          {/* Back Arrow */}
-//       <button onClick={onBack} className="absolute top-4 left-4 text-gray-600">
-//         <IoMdArrowBack size={24} />
-//       </button>
-
-//       {/* Cancel Button (X) */}
-//       <button onClick={onBack} className="absolute top-4 right-4 text-gray-600">
-//         <IoMdClose size={24} />
-//       </button>
-
-
-//       <h1 className="text-2xl font-bold">Upload Flow</h1>
-//       <button
-//         onClick={onComplete}
-//         className="mt-4 px-4 py-2 bg-green-500 text-white rounded"
-//       >
-//         Complete Upload
-//       </button>
-//       <button
-//         onClick={onBack}
-//         className="mt-2 px-4 py-2 bg-gray-500 text-white rounded"
-//       >
-//         Back to Dashboard
-//       </button>
-//     </div>
-//   );
-// }
-
-
-
-// export default function UploadFlow({
-//   onComplete,
-//   onBack,
-// }: {
-//   onComplete: () => void;
-//   onBack: () => void;
-// }) {
-//   return (
-//     <div className="p-8">
-//       <h1 className="text-2xl font-bold mb-4">Upload Flow</h1>
-//       <button
-//         onClick={onComplete}
-//         className="px-4 py-2 bg-green-500 text-white rounded-lg"
-//       >
-//         Complete Upload
-//       </button>
-//       <button onClick={onBack} className="ml-4 px-4 py-2 bg-gray-500 text-white rounded-lg">
-//         Back to Dashboard
-//       </button>
-//     </div>
-//   );
-// }
-
-
-
-// export default function UploadFlow({ onComplete, onBack }: { onComplete: () => void; onBack: () => void }) {
-//   return (
-//     <div className="p-4">
-//       <h1 className="text-2xl font-bold">Upload Flow</h1>
-//       <button
-//         onClick={onComplete}
-//         className="mt-4 px-4 py-2 bg-green-500 text-white rounded"
-//       >
-//         Complete Upload
-//       </button>
-//       <button
-//         onClick={onBack}
-//         className="mt-2 px-4 py-2 bg-gray-500 text-white rounded"
-//       >
-//         Back to Dashboard
-//       </button>
-//     </div>
-//   );
-// }

@@ -5,12 +5,10 @@ import React, {useState} from "react";
 
 
 export default function Tabs() {
-  // State to track the active tab (either "works" or "revenue")
   const [activeTab, setActiveTab] = useState<"works" | "revenue">("works");
 
   return (
     <div>
-      {/* Tab Headers */}
       <div className="flex space-x-8 border-b mb-4">
         <button
           onClick={() => setActiveTab("works")}
@@ -33,8 +31,6 @@ export default function Tabs() {
           Revenue
         </button>
       </div>
-
-      {/* Conditional Rendering based on Active Tab */}
       {activeTab === "works" ? <UploadedWorks /> : <RevenueOverview />}
     </div>
   );
@@ -97,45 +93,3 @@ function RevenueOverview() {
 }
 
 
-
-// export default function Tabs() {
-//   return (
-//     <div>
-//       {/* Tab Headers */}
-//       <div className="flex space-x-8 border-b mb-4">
-//         <button className="pb-2 border-b-2 border-black font-semibold text-gray-900">
-//           Uploaded Works
-//         </button>
-//         <button className="pb-2 text-gray-500">Revenue</button>
-//       </div>
-
-//       {/* Tab Content - Uploaded Works Table */}
-//       <table className="w-full bg-white shadow-md rounded-lg">
-//         <thead>
-//           <tr className="border-b">
-//             <th className="p-4 text-left text-gray-600">Title</th>
-//             <th className="p-4 text-left text-gray-600">Platform</th>
-//             <th className="p-4 text-left text-gray-600">Status</th>
-//             <th className="p-4 text-left text-gray-600">Unclaimed Revenue</th>
-//           </tr>
-//         </thead>
-//         <tbody>
-//           {[
-//             { title: 'Summer Vibes', platform: 'Spotify', status: 'Analyzed', revenue: '$150.25' },
-//             { title: 'Midnight Dreams', platform: 'YouTube', status: 'Pending', revenue: '--' },
-//             { title: 'Electric Pulse', platform: 'Spotify', status: 'Analyzed', revenue: '$220.15' },
-//             { title: 'Acoustic Serenity', platform: 'YouTube', status: 'Analyzed', revenue: '$95.50' },
-//             { title: 'Urban Echoes', platform: 'Spotify', status: 'Pending', revenue: '--' },
-//           ].map((work) => (
-//             <tr key={work.title} className="border-b">
-//               <td className="p-4">{work.title}</td>
-//               <td className="p-4">{work.platform}</td>
-//               <td className="p-4">{work.status}</td>
-//               <td className="p-4">{work.revenue}</td>
-//             </tr>
-//           ))}
-//         </tbody>
-//       </table>
-//     </div>
-//   );
-// }

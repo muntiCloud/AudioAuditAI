@@ -1,9 +1,11 @@
-
 [build]
-  base = "my-app"
   command = "CI= npm run build"
-
-  publish = "my-app/.next"
+  publish = ".next"
 
 [[plugins]]
   package = "@netlify/plugin-nextjs"
+
+[[redirects]]
+  from = "/*"
+  to = "/"
+  status = 200

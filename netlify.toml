@@ -1,0 +1,11 @@
+[build]
+  command = "CI=true npm run build"  # Correct syntax for setting the CI variable
+  publish = ".next"  # Correct publish directory for Next.js builds
+
+[[plugins]]
+  package = "@netlify/plugin-nextjs"  # Ensure Next.js routes and SSR work correctly
+
+[[redirects]]
+  from = "/*"
+  to = "/"
+  status = 200  # Serve all routes through Next.js
